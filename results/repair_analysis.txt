@@ -1,0 +1,30 @@
+== 1. repair table (mean delta_worst | mean post-overall) ==
+  cell                       FIXED        prospect           LEACE             DFR             AFR
+  Qwen-civil-v3       +0.067|0.771    +0.056          +0.064|0.762    +0.180|0.782    +0.002|0.755
+  Pythia-civil-v3     -0.262|0.627    -0.208          +0.111|0.772    +0.186|0.790    +0.048|0.775
+  OLMo-civil-v3       -0.185|0.686    -0.169          +0.079|0.790    +0.160|0.807    +0.020|0.785
+  Qwen-bios-v3        +0.043|0.938    +0.035          +0.028|0.937    +0.079|0.948    +0.003|0.931
+  Pythia-bios-v3      +0.039|0.926    +0.059          +0.060|0.934    +0.128|0.949    +0.051|0.927
+  OLMo-bios-v3        +0.049|0.949    +0.052          +0.038|0.946    +0.084|0.957    +0.024|0.940
+
+== 2. mediation -> hard-ablation outcome ==
+  Qwen-civil-v3    med@LFIX mean=0.35  r(med@LFIX, fx_dw)=+0.298 (p=0.230)   r(width, fx_dw)=+0.403 (p=0.098)
+  Pythia-civil-v3  med@LFIX mean=0.86  r(med@LFIX, fx_dw)=-0.151 (p=0.550)   r(width, fx_dw)=-0.375 (p=0.125)
+  OLMo-civil-v3    med@LFIX mean=0.93  r(med@LFIX, fx_dw)=+0.280 (p=0.261)   r(width, fx_dw)=-0.090 (p=0.721)
+  Qwen-bios-v3     med@LFIX mean=0.98  r(med@LFIX, fx_dw)=-0.203 (p=0.418)   r(width, fx_dw)=-0.090 (p=0.722)
+  Pythia-bios-v3   med@LFIX mean=0.83  r(med@LFIX, fx_dw)=+0.098 (p=0.698)   r(width, fx_dw)=+0.186 (p=0.459)
+  OLMo-bios-v3     med@LFIX mean=0.68  r(med@LFIX, fx_dw)=+0.625 (p=0.006)   r(width, fx_dw)=+0.399 (p=0.101)
+  POOLED (N=108): r(med@LFIX, fx_dw)=-0.217 (p=2.4e-02)  r(width, fx_dw)=-0.341 (p=3.0e-04)  r(peak_depth, fx_dw)=-0.013 (p=8.9e-01)
+
+== 3. discovery agreement (civil cells) ==
+  Qwen-civil-v3    r(disc, oracle)=+0.517 (p=2.8e-02)  r(disc, worst)=-0.551 (p=1.8e-02)  overlap mean=1.4/20
+  Pythia-civil-v3  r(disc, oracle)=+0.627 (p=5.4e-03)  r(disc, worst)=-0.601 (p=8.3e-03)  overlap mean=1.4/20
+  OLMo-civil-v3    r(disc, oracle)=+0.628 (p=5.2e-03)  r(disc, worst)=-0.633 (p=4.8e-03)  overlap mean=1.4/20
+
+== 4. label-efficiency: r(estimate, true worst) across models ==
+  Qwen-civil-v3     k=5:+0.70  k=10:+0.83  k=25:+0.92  k=50:+0.96  cd_m=25:+0.87  cd_m=100:+0.90  cd_m=300:+0.91   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)
+  Pythia-civil-v3   k=5:+0.68  k=10:+0.82  k=25:+0.92  k=50:+0.96  cd_m=25:+0.72  cd_m=100:+0.76  cd_m=300:+0.77   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)
+  OLMo-civil-v3     k=5:+0.63  k=10:+0.78  k=25:+0.90  k=50:+0.95  cd_m=25:+0.84  cd_m=100:+0.89  cd_m=300:+0.90   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)
+  Qwen-bios-v3      k=5:+0.34  k=10:+0.51  k=25:+0.72  k=50:+0.84  cd_m=25:+0.92  cd_m=100:+0.93  cd_m=300:+0.93   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)
+  Pythia-bios-v3    k=5:+0.58  k=10:+0.75  k=25:+0.87  k=50:+0.94  cd_m=25:+0.81  cd_m=100:+0.81  cd_m=300:+0.81   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)
+  OLMo-bios-v3      k=5:+0.37  k=10:+0.53  k=25:+0.73  k=50:+0.86  cd_m=25:+0.87  cd_m=100:+0.88  cd_m=300:+0.88   (k = labeled/group, 4k labels; cd_m = unlabeled texts, 0 labels)

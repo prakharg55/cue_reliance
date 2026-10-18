@@ -1,0 +1,20 @@
+2026-07-22 07:33:56.256032: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784720036.272412 2323421 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1784720036.277757 2323421 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1784720036.293982 2323421 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784720036.294008 2323421 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784720036.294015 2323421 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784720036.294020 2323421 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-07-22 07:33:56.298842: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+`torch_dtype` is deprecated! Use `dtype` instead!
+V2 rho=0.65 seed=0 model=pythia device=cuda
+RESULT rho=0.65 seed=0 worstgroup=0.752 advgroup=0.805 cueDelta=1.041
+PROBE per-layer AUROC 0.578 0.847 0.907 0.906 0.905 0.918 0.905 0.901 0.908 0.907 0.905 0.895 0.893 0.910 0.917 0.914 0.906 0.933 0.931 0.936 0.948 0.957 0.957 0.955 0.946
+PROBE_RESULT rho=0.65 seed=0 maxAUROC=0.9574 argmaxL=21
+PROSPECT train-cueDelta base=1.279 curve 1.193 1.235 1.164 1.143 1.148 1.224 1.270 1.233 1.234 1.204 1.242 1.240 1.027 0.876 0.789 0.846 0.860 0.264 0.124 0.069 0.018 -0.075 0.033 0.075
+PROSPECT_RESULT rho=0.65 seed=0 Lstar=21 worst=0.570 overall=0.760 delta_worst=-0.182
+FIXED20 rho=0.65 seed=0 worst=0.405 overall=0.701 delta_worst=-0.347
+LEACE rho=0.65 seed=0 L=20 trainAUROC_after=0.500 worst=0.785 overall=0.819 delta_worst=+0.033
+V2 DONE

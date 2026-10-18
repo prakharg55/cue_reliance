@@ -1,0 +1,18 @@
+== PUBLIC CLASSIFIERS (n=8) ==
+  citizenlab/distilbert-base-multilingual-cased-toxicity  worst=0.565 overall=0.726 auroc=0.808 cueDelta=-0.037
+  Hate-speech-CNERG/dehatebert-mono-english               worst=0.580 overall=0.667 auroc=0.719 cueDelta=+0.259
+  s-nlp/roberta_toxicity_classifier                       worst=0.838 overall=0.894 auroc=0.967 cueDelta=+2.280
+  unitary/toxic-bert                                      worst=0.790 overall=0.846 auroc=0.923 cueDelta=+0.811
+  JungleLee/bert-toxic-comment-classification             worst=0.735 overall=0.828 auroc=0.906 cueDelta=+1.037
+  martin-ha/toxic-comment-model                           worst=0.807 overall=0.854 auroc=0.932 cueDelta=+0.860
+  facebook/roberta-hate-speech-dynabench-r4-target        worst=0.330 overall=0.626 auroc=0.641 cueDelta=+1.860
+  cardiffnlp/twitter-roberta-base-offensive               worst=0.662 overall=0.799 auroc=0.902 cueDelta=+0.122
+
+  capability: Spearman(overall, worst) = +0.976  p=0.0000
+  capability: Spearman(auroc, worst)   = +0.976  p=0.0000
+  reliance:   Spearman(cueDelta, worst) = +0.405  p=0.3199
+  reliance:   Pearson(cueDelta, worst)  = +0.062  p=0.8840   [wrong-signed, n.s.]
+
+  Reading: across uncontrolled public models, capability differences
+  dominate worst-group accuracy and the reliance measurement does not
+  separate from them. This is the scope limit the paper reports.

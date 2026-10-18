@@ -1,0 +1,9 @@
+== COMPUTE AUDIT (from Slurm sacct over the job ids in the shipped logs; 2026-10-15) ==
+  scheduler jobs behind reported results : 490 COMPLETED (486 fine-tuning runs + 4 public-classifier evaluation jobs); 12 FAILED retries excluded
+  hardware                               : 1 x NVIDIA A100 per job (nodes della-l04g/l06g/l07g/l08g)
+  total GPU-hours (completed jobs)       : 83.3   (83.5 including the 12 failed attempts)
+  per-job minutes                        : median 7.5  IQR [6.6, 12.2]  min 0.3  max 51.4
+  per 18-model cell                      : min 1.2 GPU-h  max 7.4 GPU-h
+  software (install dates precede the training window unless noted)
+    torch 2.9.0 (2025-12-21)  peft 0.19.1 (2026-06-23)  scikit-learn 1.6.1  statsmodels 0.14.2  numpy 1.26.4  scipy 1.15.2  pandas 2.2.3
+    transformers: training-time version NOT recorded (5.15.1 installed 2026-08-20, after the training window)

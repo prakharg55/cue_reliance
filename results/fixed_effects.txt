@@ -1,0 +1,50 @@
+
+== all complete cells: N=180 models, 10 cells ==
+  M1 cueD + cell FE                : beta=-0.1129 se=0.0067 p=3.078e-38  R2=0.800  [SIGNIFICANT]
+  M2 cueD + cell FE + rho LINEAR   : beta=-0.0796 se=0.0134 p=1.556e-08  R2=0.809  [SIGNIFICANT]
+  M3 cueD + cell FE + rho DUMMIES  : beta=-0.0296 se=0.0173 p=8.903e-02  R2=0.829  [not significant]
+  M4 cueD + cell*rho FE (seed only): beta=-0.0288 se=0.0167 p=8.671e-02  R2=0.906  [not significant]
+  M1 attribution: cell-FE-only R2=0.460; partial R2 of cueDelta over cell FE = 0.629
+  rho nonlinearity (dummies vs linear, no cueDelta): F(4,165)=13.43 p=1.691e-09   R2 0.769 -> 0.826
+  raw per-cell correlation of cueDelta with worst (pooled over rho):
+    OLMo1B-bios-v3     n=18  r=-0.8773  p=1.75e-06
+    OLMo1B-civil-v3    n=18  r=-0.9035  p=2.79e-07
+    Pythia1.4b-bios    n=18  r=-0.9375  p=9.60e-09
+    Pythia1.4b-civil   n=18  r=-0.8996  p=3.76e-07
+    Pythia410m-bios    n=18  r=-0.7463  p=3.75e-04
+    Pythia410m-civil   n=18  r=-0.7652  p=2.15e-04
+    Qwen0.5B-bios      n=18  r=-0.9303  p=2.24e-08
+    Qwen0.5B-civil     n=18  r=-0.9055  p=2.37e-07
+    Qwen1.5B-bios      n=18  r=-0.8539  p=6.54e-06
+    Qwen1.5B-civil     n=18  r=-0.6822  p=1.82e-03
+  per-cell within-rho (seed-level) correlation of cueDelta with worst:
+    OLMo1B-bios-v3     r=+0.134  (n=18, 3 seeds x 6 rho)
+    OLMo1B-civil-v3    r=-0.293  (n=18, 3 seeds x 6 rho)
+    Pythia1.4b-bios    r=-0.805  (n=18, 3 seeds x 6 rho)
+    Pythia1.4b-civil   r=-0.547  (n=18, 3 seeds x 6 rho)
+    Pythia410m-bios    r=-0.166  (n=18, 3 seeds x 6 rho)
+    Pythia410m-civil   r=+0.192  (n=18, 3 seeds x 6 rho)
+    Qwen0.5B-bios      r=-0.287  (n=18, 3 seeds x 6 rho)
+    Qwen0.5B-civil     r=-0.258  (n=18, 3 seeds x 6 rho)
+    Qwen1.5B-bios      r=-0.772  (n=18, 3 seeds x 6 rho)
+    Qwen1.5B-civil     r=+0.544  (n=18, 3 seeds x 6 rho)
+
+== all complete cells: mediation of the rho effect through cueDelta ==
+  total effect  rho=0.97 vs 0.55 on worst-group: -0.3222
+  direct effect controlling cueDelta:            -0.2453
+  proportion mediated by cueDelta:               23.9%
+  bootstrap 95% CI on proportion mediated:       [-18.3%, 57.9%]  (B=2000)
+
+== stress test of the other two linear-control claims ==
+  used-vs-decodable: does cueDelta beat probe AUROC  (N=180)
+    rho LINEAR : cueDelta beta=-0.0813 p=8.130e-09   | zprobe beta=-0.0150 p=0.120  [SIGNIFICANT]
+    rho DUMMIES: cueDelta beta=-0.0282 p=1.011e-01   | zprobe beta=-0.0212 p=0.023  [not significant]
+  repair targeting: does cueDelta predict LEACE benefit  (N=180)
+    rho LINEAR : cueDelta beta=+0.0545 p=2.101e-08  [SIGNIFICANT]
+    rho DUMMIES: cueDelta beta=+0.0321 p=1.003e-02  [SIGNIFICANT]
+
+Verdict is read off M3/M4: if cueDelta's coefficient survives exact rho
+control it screens off the recipe; if it dies there but lives in M2, the
+earlier claim rested on linear-control leakage and must be reframed as
+MEDIATION (rho -> cue reliance -> failure), which is the causally correct
+story anyway given that rho is experimentally assigned.

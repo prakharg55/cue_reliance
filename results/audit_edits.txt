@@ -1,0 +1,29 @@
+== CivilComments: identity neutralization ==
+  eval group sizes: {(1, 1): 798, (1, 0): 796, (0, 1): 800, (0, 0): 799}  train: {(1, 1): 3190, (1, 0): 3180, (0, 1): 3199, (0, 0): 3195}
+  identity-present eval texts: n=1598; changed by neutralize: 100.0%
+  identity tokens replaced/text: mean=1.50 median=1 max=10;  text length mean=49 words (edit fraction 3.1%)
+  top terms: catholic(566), muslims(276), muslim(276), christian(198), islam(163), gay(131), jews(113), christians(108)
+  examples:
+    - An illegal immigrant is a criminal.
+      -> An illegal people is a criminal.
+    - No, it's just that what gay men do to each other is more clearly abusive.
+      -> No, it's just that what people men do to each other is more clearly abusive.
+    - The fact that you cannot think of a single homosexual who has been lynched is quite revealing.
+      -> The fact that you cannot think of a single people who has been lynched is quite revealing.
+  realized rho=0.55 draw (n=4000, seed 0): P(toxic|cue)=0.550  P(toxic|no cue)=0.450  P(toxic)=0.500
+  realized rho=0.97 draw (n=4000, seed 0): P(toxic|cue)=0.970  P(toxic|no cue)=0.030  P(toxic)=0.500
+
+== Bios: gender-lexicon swap ==
+  labels: 1=professor 0=physician
+  eval group sizes: {(1, 1): 800, (1, 0): 800, (0, 1): 800, (0, 0): 800}
+  male-cue eval texts: n=1600; changed by swap: 99.9%
+  lexicon tokens swapped/text: mean=3.14 median=3 max=10;  length mean=60 words (edit fraction 5.2%)
+  round-trip swap(swap(x)) != x: 67.4%  (his/her->her->his collapse; document in appendix)
+  top tokens: he(2726), his(1844), mr(292), him(88), women(23), wife(8), father(7), man(6)
+  examples:
+    - A leading expert in window glass, his research provides a basis for industry glass strength design standards. Professor Morse's re
+      -> A leading expert in window glass, her research provides a basis for industry glass strength design standards. Professor Morse's re
+    - His research focuses on Martian meteorites, micrometeorites and planetary remote sensing. He has published extensively in prestigi
+      -> Her research focuses on Martian meteorites, micrometeorites and planetary remote sensing. She has published extensively in prestig
+    - His publications appeared in Synthese, Philosophy, Ratio, Southern Journal of Philosophy, Philosophia, Theoria, Acta Analytica, an
+      -> Her publications appeared in Synthese, Philosophy, Ratio, Southern Journal of Philosophy, Philosophia, Theoria, Acta Analytica, an

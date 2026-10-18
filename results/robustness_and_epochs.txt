@@ -1,0 +1,22 @@
+============================================================================
+A. ROBUSTNESS ARMS -- does the conclusion flip?
+============================================================================
+  LoRA / base  (frozen reference)  N=18  r(cueD,worst)=-0.905 (p=2.4e-07)   mean worst=0.562  cueD range=[0.43,7.86]
+  FULL fine-tuning                 N=18  r(cueD,worst)=-0.897 (p=4.7e-07)   mean worst=0.606  cueD range=[0.49,7.23]
+  LoRA / INSTRUCT base             N=18  r(cueD,worst)=-0.907 (p=2.1e-07)   mean worst=0.559  cueD range=[0.72,7.62]
+
+============================================================================
+B. EARLY WARNING -- is cue reliance readable before training finishes?
+============================================================================
+  N=72 models with full epoch traces (2 cells)
+
+  Predicting FINAL worst-group from epoch-1 signals (cell FE):
+    predictor                           r          p      + exact rho control
+    epoch-1 cueDelta               -0.886   4.95e-25   beta=+0.0129 p=0.6686  [n.s.]
+    FINAL cueDelta (ceiling)       -0.851   3.09e-21   beta=-0.0122 p=0.3271  [n.s.]
+    epoch-1 worst-group (oracle,   +0.836   5.92e-20   beta=-0.0485 p=0.6212  [n.s.]
+    epoch-1 worst-CLASS (label-f   +0.710   2.76e-12   beta=-0.0477 p=0.7346  [n.s.]
+    epoch-1 overall acc            +0.875   9.68e-24   beta=+0.0187 p=0.9504  [n.s.]
+    epoch-1 train loss             +0.811   5.73e-18   beta=+0.1150 p=0.7422  [n.s.]
+
+  retention: R2(epoch-1)/R2(final) = 0.785/0.724 = 108.4%  <- how much of the end-of-training signal is already present after 1 of 4 epochs

@@ -1,0 +1,14 @@
+{
+  "s-nlp/roberta_toxicity_classifier":                 {"tier": "A-jigsaw", "label": "toxic"},
+  "unitary/toxic-bert":                                {"tier": "A-jigsaw", "label": "toxic"},
+  "unitary/unbiased-toxic-roberta":                    {"tier": "A-jigsaw", "label": "toxicity"},
+  "JungleLee/bert-toxic-comment-classification":       {"tier": "A-jigsaw", "label": "toxic"},
+  "martin-ha/toxic-comment-model":                     {"tier": "A-jigsaw", "label": "toxic"},
+  "citizenlab/distilbert-base-multilingual-cased-toxicity": {"tier": "A-jigsaw", "label": "toxic", "note": "INVERTED id2label: 0=toxic,1=not_toxic"},
+  "facebook/roberta-hate-speech-dynabench-r4-target":  {"tier": "B-other", "label": "hate"},
+  "cardiffnlp/twitter-roberta-base-offensive":         {"tier": "B-other", "label": "offensive"},
+  "cardiffnlp/twitter-roberta-base-hate-latest":       {"tier": "B-other", "label": "hate"},
+  "Hate-speech-CNERG/dehatebert-mono-english":         {"tier": "B-other", "label": "hate"},
+  "Hate-speech-CNERG/bert-base-uncased-hatexplain":    {"tier": "B-other", "label": "hatespeech"},
+  "tomh/toxigen_roberta":                              {"tier": "B-other", "label": null, "note": "no id2label; polarity determined empirically"}
+}

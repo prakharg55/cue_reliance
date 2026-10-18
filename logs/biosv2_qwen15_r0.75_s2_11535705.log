@@ -1,0 +1,21 @@
+2026-07-23 13:08:21.950504: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-07-23 13:08:22.440577: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784826502.552553 3942737 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1784826502.624054 3942737 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1784826502.897785 3942737 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784826502.897832 3942737 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784826502.897838 3942737 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784826502.897841 3942737 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-07-23 13:08:22.903981: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+`torch_dtype` is deprecated! Use `dtype` instead!
+BIOSV2 rho=0.75 seed=2 model=qwen15 labels=professor/physician device=cuda
+RESULT rho=0.75 seed=2 worstgroup=0.797 advgroup=0.891 cueDelta=1.412 (G11=0.98 G10=0.98 G01=0.80 G00=0.96)
+PROBE per-layer AUROC 0.501 0.680 0.800 0.811 0.836 0.840 0.827 0.818 0.813 0.837 0.848 0.863 0.877 0.890 0.900 0.897 0.897 0.911 0.922 0.924 0.911 0.960 0.999 1.000 1.000 1.000 1.000 1.000 1.000
+PROBE_RESULT rho=0.75 seed=2 maxAUROC=1.0000 argmaxL=28
+PROSPECT train-cueDelta base=1.402 curve 1.392 1.415 1.396 1.397 1.407 1.414 1.419 1.430 1.405 1.368 1.426 1.456 1.432 1.339 1.402 1.433 1.399 1.358 1.363 1.363 1.359 0.367 0.574 0.267 0.154 0.220 0.040 0.078
+PROSPECT_RESULT rho=0.75 seed=2 Lstar=26 worst=0.835 overall=0.933 delta_worst=+0.037
+FIXED rho=0.75 seed=2 L=23 worst=0.815 overall=0.928 delta_worst=+0.017
+LEACE rho=0.75 seed=2 L=23 trainAUROC_after=0.500 worst=0.833 overall=0.936 delta_worst=+0.035
+V2 DONE

@@ -1,0 +1,6 @@
+== Table 2: LEACE worst-group gain ~ cue reliance + cell x rho fixed effects (n=135) ==
+  cue reliance standardized   baseline control      beta        p
+  within cell                 no                 +0.0417   0.0018
+  within cell                 yes                +0.0337   0.0060
+  within stratum              no                 +0.0125   0.0134
+  within stratum              yes                +0.0086   0.0657

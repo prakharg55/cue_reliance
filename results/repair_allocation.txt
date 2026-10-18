@@ -1,0 +1,25 @@
+headroom check: r(1-worst, LEACE gain) = +0.793 (p=2.0e-30) on n=135
+
+== prospective allocation: repair top 15 of 45 per held-out cell ==
+held-out cell      random     cueD  headroom  high-rho   oracle
+Pythia410m-civil   +0.137   +0.303   +0.305   +0.306   +0.307
+Qwen0.5B-bios      +0.048   +0.116   +0.116   +0.116   +0.118
+Qwen0.5B-civil     +0.089   +0.182   +0.181   +0.181   +0.189
+MEAN               +0.091   +0.200   +0.201   +0.201   +0.205
+
+== budget sweep (mean selected gain over cells; rho policy uses
+   stratum-mean expectations since ranking is undefined within a stratum) ==
+   k   random     cueD  headroom  high-rho   oracle
+   5   +0.091   +0.224   +0.218   +0.201   +0.281
+  10   +0.091   +0.214   +0.210   +0.201   +0.237
+  15   +0.091   +0.200   +0.201   +0.201   +0.205
+  20   +0.091   +0.173   +0.176   +0.170   +0.181
+  30   +0.091   +0.138   +0.139   +0.138   +0.142
+
+== uncertainty: can random selection match the cueD ranking? ==
+  k=5: P(random k-subset >= cueD selection) per cell = 0.0010, 0.0002, 0.0139
+  k=10: P(random k-subset >= cueD selection) per cell = 0.0000, 0.0000, 0.0000
+
+Reading: ranking by the measurement is compared against selection by
+visible failure (headroom = 1 - baseline worst) and by the assigned
+recipe; oracle = selecting on realized gain, the ceiling.

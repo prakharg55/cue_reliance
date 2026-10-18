@@ -1,0 +1,5 @@
+== LEXICON FREQUENCY AUDIT (recomputed from the training pool, n=16000 docs) ==
+  identity lexicon: 32 terms, total document frequency = 10184
+  placebo  lexicon: 32 words, total document frequency = 10151
+  per-term identity df: muslim:1187, catholic:1173, muslims:1135, christian:1013, gay:822, christians:613, islam:581, jews:428, islamic:398, gays:277, christianity:257, mexican:249, jewish:247, lgbt:235, immigrant:225, transgender:156, asian:150, homosexual:149, feminist:124, hispanic:113, arab:112, jew:111, atheist:92, lesbian:85, latino:63, lgbtq:41, mormon:39, hindu:37, queer:23, bisexual:20, buddhist:19, latina:10
+  per-term placebo  df: should:1230, know:1132, think:1128, right:984, want:841, years:602, take:571, sure:428, long:399, makes:279, oregon:261, needs:257, having:247, idea:230, perhaps:224, laws:156, court:152, heard:148, damn:124, west:113, deal:113, paid:110, sanders:90, member:85, believes:59, chose:41, attacking:39, movie:36, damned:23, meaningless:20, doctrines:19, maher:10

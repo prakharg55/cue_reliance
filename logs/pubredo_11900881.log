@@ -1,0 +1,188 @@
+2026-08-01 22:56:42.564095: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639402.640207 1775534 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639402.652699 1775534 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639402.755725 1775534 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639402.755773 1775534 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639402.755780 1775534 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639402.755787 1775534 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:56:42.763343: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Some weights of the model checkpoint at s-nlp/roberta_toxicity_classifier were not used when initializing RobertaForSequenceClassification: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+PUBLIC model=s-nlp/roberta_toxicity_classifier labels={0: 'neutral', 1: 'toxic'} toxic_index=1 device=cuda
+PUBLIC_CAL model=s-nlp/roberta_toxicity_classifier multilabel=False threshold=-3.089 balanced_acc=0.880
+PUBLIC_RESULT model=s-nlp/roberta_toxicity_classifier worst=0.838 overall=0.894 auroc=0.967 cueDelta=2.280 G11=0.838 G10=0.877 G01=0.892 G00=0.968
+PUBLIC DONE
+2026-08-01 22:57:07.918954: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639427.934147 1775840 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639427.939380 1775840 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639427.955169 1775840 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639427.955197 1775840 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639427.955205 1775840 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639427.955211 1775840 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:57:07.960864: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+PUBLIC model=unitary/toxic-bert labels={0: 'toxic', 1: 'severe_toxic', 2: 'obscene', 3: 'threat', 4: 'insult', 5: 'identity_hate'} toxic_index=0 device=cuda
+PUBLIC_CAL model=unitary/toxic-bert multilabel=True threshold=-3.670 balanced_acc=0.823
+PUBLIC_RESULT model=unitary/toxic-bert worst=0.790 overall=0.846 auroc=0.923 cueDelta=0.811 G11=0.835 G10=0.912 G01=0.790 G00=0.845
+PUBLIC DONE
+2026-08-01 22:57:22.423907: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639442.439228 1775877 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639442.444562 1775877 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639442.460473 1775877 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639442.460499 1775877 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639442.460507 1775877 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639442.460514 1775877 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:57:22.464842: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+PUBLIC model=JungleLee/bert-toxic-comment-classification labels={0: 'non-toxic', 1: 'toxic'} toxic_index=1 device=cuda
+PUBLIC_CAL model=JungleLee/bert-toxic-comment-classification multilabel=False threshold=-2.729 balanced_acc=0.800
+PUBLIC_RESULT model=JungleLee/bert-toxic-comment-classification worst=0.735 overall=0.828 auroc=0.906 cueDelta=1.037 G11=0.735 G10=0.863 G01=0.835 G00=0.877
+PUBLIC DONE
+2026-08-01 22:57:37.045517: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639457.061400 1775907 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639457.066690 1775907 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639457.082309 1775907 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639457.082335 1775907 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639457.082343 1775907 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639457.082350 1775907 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:57:37.086632: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+PUBLIC model=martin-ha/toxic-comment-model labels={0: 'non-toxic', 1: 'toxic'} toxic_index=1 device=cuda
+PUBLIC_CAL model=martin-ha/toxic-comment-model multilabel=False threshold=-3.624 balanced_acc=0.830
+PUBLIC_RESULT model=martin-ha/toxic-comment-model worst=0.807 overall=0.854 auroc=0.932 cueDelta=0.860 G11=0.853 G10=0.807 G01=0.815 G00=0.943
+PUBLIC DONE
+2026-08-01 22:57:49.167124: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639469.183421 1775976 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639469.188789 1775976 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639469.204683 1775976 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639469.204716 1775976 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639469.204723 1775976 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639469.204729 1775976 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:57:49.209091: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/workspace/project/public_eval.py", line 179, in <module>
+    main()
+  File "/workspace/project/public_eval.py", line 125, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1156, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2438, in _patch_mistral_regex
+    if _is_local or is_base_mistral(pretrained_model_name_or_path):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2637, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 107, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/citizenlab/distilbert-base-multilingual-cased-toxicity: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+PUBLIC_FAIL model=citizenlab/distilbert-base-multilingual-cased-toxicity
+2026-08-01 22:57:57.716915: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639477.732453 1775999 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639477.737737 1775999 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639477.753588 1775999 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639477.753643 1775999 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639477.753650 1775999 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639477.753657 1775999 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:57:57.758023: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+PUBLIC model=facebook/roberta-hate-speech-dynabench-r4-target labels={0: 'nothate', 1: 'hate'} toxic_index=1 device=cuda
+PUBLIC_CAL model=facebook/roberta-hate-speech-dynabench-r4-target multilabel=False threshold=-2.648 balanced_acc=0.580
+PUBLIC_RESULT model=facebook/roberta-hate-speech-dynabench-r4-target worst=0.330 overall=0.626 auroc=0.641 cueDelta=1.860 G11=0.767 G10=0.330 G01=0.522 G00=0.882
+PUBLIC DONE
+2026-08-01 22:58:12.295322: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639492.311406 1776039 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639492.316789 1776039 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639492.332787 1776039 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639492.332813 1776039 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639492.332821 1776039 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639492.332827 1776039 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:58:12.337225: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+PUBLIC model=cardiffnlp/twitter-roberta-base-offensive labels={0: 'non-offensive', 1: 'offensive'} toxic_index=1 device=cuda
+PUBLIC_CAL model=cardiffnlp/twitter-roberta-base-offensive multilabel=False threshold=-0.220 balanced_acc=0.802
+PUBLIC_RESULT model=cardiffnlp/twitter-roberta-base-offensive worst=0.662 overall=0.799 auroc=0.902 cueDelta=0.122 G11=0.662 G10=0.853 G01=0.818 G00=0.865
+PUBLIC DONE
+2026-08-01 22:58:27.723506: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785639507.739224 1776068 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785639507.744548 1776068 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785639507.760442 1776068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639507.760469 1776068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639507.760476 1776068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785639507.760482 1776068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 22:58:27.764832: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/workspace/project/public_eval.py", line 179, in <module>
+    main()
+  File "/workspace/project/public_eval.py", line 125, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1175, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2438, in _patch_mistral_regex
+    if _is_local or is_base_mistral(pretrained_model_name_or_path):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2637, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 107, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/Hate-speech-CNERG/dehatebert-mono-english: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+PUBLIC_FAIL model=Hate-speech-CNERG/dehatebert-mono-english
+ALL_PUBLIC_DONE

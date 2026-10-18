@@ -1,0 +1,80 @@
+== 1. cueDelta-rho collinearity ==
+  Qwen-civil     r(cueD, rho) = +0.873  p=2.3e-06
+  Pythia-civil   r(cueD, rho) = +0.922  p=5.3e-08
+  Qwen-bios      r(cueD, rho) = +0.933  p=1.6e-08
+  Pythia-bios    r(cueD, rho) = +0.906  p=2.3e-07
+  Pythia1.4b-civil r(cueD, rho) = +0.947  p=2.8e-09
+  Pythia1.4b-bios r(cueD, rho) = +0.843  p=1.1e-05
+  Qwen1.5B-civil r(cueD, rho) = +0.759  p=2.6e-04
+  Qwen1.5B-bios  r(cueD, rho) = +0.779  p=1.4e-04
+
+== 2. probe decodability range ==
+  Qwen-civil     maxAUROC mean=0.966 sd=0.019 range[0.927,0.993]   cueD sd/mean=2.28/3.02
+  Pythia-civil   maxAUROC mean=0.971 sd=0.018 range[0.941,0.996]   cueD sd/mean=1.63/2.42
+  Qwen-bios      maxAUROC mean=0.992 sd=0.016 range[0.945,1.000]   cueD sd/mean=2.02/2.22
+  Pythia-bios    maxAUROC mean=0.992 sd=0.014 range[0.942,1.000]   cueD sd/mean=3.35/3.35
+  Pythia1.4b-civil maxAUROC mean=0.980 sd=0.010 range[0.964,0.995]   cueD sd/mean=2.08/3.43
+  Pythia1.4b-bios maxAUROC mean=0.997 sd=0.004 range[0.990,1.000]   cueD sd/mean=3.66/3.28
+  Qwen1.5B-civil maxAUROC mean=0.940 sd=0.029 range[0.896,0.981]   cueD sd/mean=1.94/2.30
+  Qwen1.5B-bios  maxAUROC mean=1.000 sd=0.001 range[0.998,1.000]   cueD sd/mean=3.12/2.72
+
+== 3. leave-one-rho-out prediction of worst-group ==
+  cell               from cueD R2/MAE      from rho R2/MAE    from probe R2/MAE
+  Qwen-civil          +0.698/0.080        +0.594/0.100        +0.407/0.132  
+  Pythia-civil        +0.524/0.105        +0.214/0.155        -0.019/0.161  
+  Qwen-bios           +0.850/0.021        +0.567/0.039        -3.809/0.103  
+  Pythia-bios         +0.495/0.066        +0.296/0.080        -0.577/0.116  
+  Pythia1.4b-civil      +0.562/0.096        +0.427/0.106        +0.335/0.118  
+  Pythia1.4b-bios      +0.758/0.045        +0.591/0.049        +0.303/0.065  
+  Qwen1.5B-civil      +0.397/0.081        +0.423/0.088        +0.553/0.075  
+  Qwen1.5B-bios       +0.488/0.037        +0.541/0.038        -0.434/0.067  
+
+== 4. repair targeting: r(x, LEACE delta_worst) ==
+  Qwen-civil     cueD: +0.807 (p=0.000)   rho: +0.748 (p=0.000)
+  Pythia-civil   cueD: +0.853 (p=0.000)   rho: +0.797 (p=0.000)
+  Qwen-bios      cueD: +0.828 (p=0.000)   rho: +0.709 (p=0.001)
+  Pythia-bios    cueD: +0.678 (p=0.002)   rho: +0.652 (p=0.003)
+  Pythia1.4b-civil cueD: +0.860 (p=0.000)   rho: +0.851 (p=0.000)
+  Pythia1.4b-bios cueD: +0.854 (p=0.000)   rho: +0.654 (p=0.003)
+  Qwen1.5B-civil cueD: +0.741 (p=0.000)   rho: +0.661 (p=0.003)
+  Qwen1.5B-bios  cueD: +0.937 (p=0.000)   rho: +0.749 (p=0.000)
+
+== 5. interventions per cell (mean delta_worst | mean post-overall) ==
+  cell                      FIXED20        prospect-L*              LEACE
+  Qwen-civil         +0.067 | 0.771     +0.056 | 0.749     +0.064 | 0.762
+                 prospect L* chosen: min=22 med=22 max=23   probe argmaxL med=23
+  Pythia-civil       -0.262 | 0.627     -0.208 | 0.640     +0.111 | 0.772
+                 prospect L* chosen: min=20 med=21 max=23   probe argmaxL med=21
+  Qwen-bios          +0.043 | 0.938     +0.035 | 0.937     +0.028 | 0.937
+                 prospect L* chosen: min=3 med=22 max=23   probe argmaxL med=22
+  Pythia-bios        +0.050 | 0.930     +0.060 | 0.933     +0.057 | 0.934
+                 prospect L* chosen: min=4 med=22 max=23   probe argmaxL med=18
+  Pythia1.4b-civil     -0.385 | 0.613     -0.267 | 0.655     +0.115 | 0.796
+                 prospect L* chosen: min=19 med=21 max=23   probe argmaxL med=23
+  Pythia1.4b-bios     +0.002 | 0.920     +0.021 | 0.926     +0.053 | 0.939
+                 prospect L* chosen: min=0 med=21 max=23   probe argmaxL med=19
+  Qwen1.5B-civil     -0.344 | 0.576     -0.320 | 0.571     +0.045 | 0.767
+                 prospect L* chosen: min=22 med=25 max=27   probe argmaxL med=22
+  Qwen1.5B-bios      +0.036 | 0.945     +0.035 | 0.946     +0.038 | 0.945
+                 prospect L* chosen: min=1 med=25 max=27   probe argmaxL med=26
+
+== 6. pooled within-cell-standardized regression (N=144, 8 cells) ==
+  pooled r(z_cueD, z_worst) = -0.8401  p=1.52e-39
+  beta cueD | rho: -0.5569 (t=-6.29, p=3.82e-09)
+  beta rho | cueD: -0.3254 (t=-3.67, p=3.41e-04)
+
+== 7. cluster bootstrap over rho-levels (B=4000, 8 cells) ==
+  worst ~ cueD + rho       beta cueD: -0.5569  cluster-CI[-0.725,-0.164]  excludes 0: True
+  worst ~ cueD + rho       beta rho : -0.3254  cluster-CI[-0.638,-0.139]  excludes 0: True
+  LEACE-dw ~ cueD + rho    beta cueD: +0.7695  cluster-CI[+0.398,+0.974]  excludes 0: True
+  LEACE-dw ~ cueD + rho    beta rho : +0.0579  cluster-CI[-0.166,+0.395]  excludes 0: False
+
+== 8. prospect selection signal vs held-out damage ==
+  Qwen-civil       mean frac train-cueD removed at L* = 0.94 (n=18)   r(frac, delta_worst) = +0.051 (p=0.841)
+  Pythia-civil     mean frac train-cueD removed at L* = 1.06 (n=18)   r(frac, delta_worst) = +0.039 (p=0.878)
+  Qwen-bios        mean frac train-cueD removed at L* = 0.95 (n=15)   r(frac, delta_worst) = +0.193 (p=0.491)
+  Pythia-bios      mean frac train-cueD removed at L* = 0.97 (n=14)   r(frac, delta_worst) = -0.012 (p=0.966)
+  Pythia1.4b-civil mean frac train-cueD removed at L* = 1.04 (n=18)   r(frac, delta_worst) = +0.198 (p=0.431)
+  Pythia1.4b-bios  mean frac train-cueD removed at L* = 1.02 (n=14)   r(frac, delta_worst) = -0.202 (p=0.488)
+  Qwen1.5B-civil   mean frac train-cueD removed at L* = 0.97 (n=18)   r(frac, delta_worst) = +0.151 (p=0.549)
+  Qwen1.5B-bios    mean frac train-cueD removed at L* = 1.00 (n=14)   r(frac, delta_worst) = -0.239 (p=0.410)

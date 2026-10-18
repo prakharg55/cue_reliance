@@ -1,0 +1,101 @@
+2026-08-01 23:07:21.021716: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785640041.091202 1689452 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785640041.109917 1689452 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785640041.244378 1689452 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640041.244425 1689452 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640041.244433 1689452 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640041.244440 1689452 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 23:07:21.253950: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/workspace/project/public_eval.py", line 179, in <module>
+    main()
+  File "/workspace/project/public_eval.py", line 125, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1156, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2438, in _patch_mistral_regex
+    if _is_local or is_base_mistral(pretrained_model_name_or_path):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2637, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 107, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/citizenlab/distilbert-base-multilingual-cased-toxicity: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+PUBLIC_FAIL model=citizenlab/distilbert-base-multilingual-cased-toxicity
+2026-08-01 23:07:37.016328: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785640057.032266 1689474 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785640057.037614 1689474 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785640057.053850 1689474 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640057.053878 1689474 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640057.053885 1689474 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785640057.053891 1689474 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-08-01 23:07:37.058269: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/workspace/project/public_eval.py", line 179, in <module>
+    main()
+  File "/workspace/project/public_eval.py", line 125, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1175, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2113, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2395, in _from_pretrained
+    tokenizer = cls._patch_mistral_regex(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2438, in _patch_mistral_regex
+    if _is_local or is_base_mistral(pretrained_model_name_or_path):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2432, in is_base_mistral
+    model = model_info(model_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2637, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/2024.6/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 107, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/Hate-speech-CNERG/dehatebert-mono-english: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+PUBLIC_FAIL model=Hate-speech-CNERG/dehatebert-mono-english
+ALL_PUBLIC_DONE

@@ -1,0 +1,19 @@
+2026-07-27 17:42:36.347904: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785188556.364148  861811 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785188556.369557  861811 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785188556.385704  861811 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785188556.385727  861811 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785188556.385733  861811 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785188556.385738  861811 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-07-27 17:42:36.390061: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+`torch_dtype` is deprecated! Use `dtype` instead!
+V3E rho=0.97 seed=5 model=qwen device=cuda
+EPOCH rho=0.97 seed=5 epoch=0 cueDeltaTrain=-0.030 cueDeltaEval=-0.017 worstSmall=0.047 overall=0.522 worstClass=0.090 trainLoss=nan
+EPOCH rho=0.97 seed=5 epoch=1 cueDeltaTrain=3.462 cueDeltaEval=3.204 worstSmall=0.147 overall=0.548 worstClass=0.523 trainLoss=0.9354
+EPOCH rho=0.97 seed=5 epoch=2 cueDeltaTrain=2.689 cueDeltaEval=2.583 worstSmall=0.160 overall=0.587 worstClass=0.540 trainLoss=0.3576
+EPOCH rho=0.97 seed=5 epoch=3 cueDeltaTrain=4.284 cueDeltaEval=4.056 worstSmall=0.273 overall=0.662 worstClass=0.593 trainLoss=0.0977
+EPOCH rho=0.97 seed=5 epoch=4 cueDeltaTrain=7.241 cueDeltaEval=6.841 worstSmall=0.300 overall=0.632 worstClass=0.627 trainLoss=0.0273
+RESULT rho=0.97 seed=5 worstgroup=0.260 advgroup=0.290 cueDelta=7.193
+V3E DONE

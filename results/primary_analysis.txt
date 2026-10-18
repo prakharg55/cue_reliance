@@ -1,0 +1,39 @@
+=== data: 135 models, 9 strata, 15-15 seeds each ===
+
+== PRIMARY ESTIMATE ==
+  PRIMARY: equal-weighted mean within-stratum slope = -0.0266 accuracy points per cueDelta unit
+           t(8)=-3.26  p=0.0116  95% CI [-0.0454, -0.0078]
+  companion: Fisher-z pooled within-stratum r = -0.224  95% CI [-0.394,-0.039]  p=0.0180
+  heterogeneity: Q(8)=4.53 p=0.807 I2=0%  -> homogeneous; pooling licensed
+
+== why equal weighting (the implicit FE-OLS weights) ==
+  rho=0.65: OLS weight share   2.9%   mean SD(cueDelta)=0.261   mean r=-0.290
+  rho=0.85: OLS weight share  20.8%   mean SD(cueDelta)=0.664   mean r=-0.290
+  rho=0.97: OLS weight share  76.3%   mean SD(cueDelta)=1.298   mean r=-0.070
+
+== standardization audit (all four, so the choice is visible) ==
+  z within CELL + stratum FE  (MISMATCHED - do not use) beta=-0.0254 p=0.1468
+  z within STRATUM + stratum FE                  beta=-0.0124 p=0.0596
+  raw cueDelta + stratum FE                      beta=-0.0129 p=0.0842
+  both z within stratum                          beta=-0.2166 p=0.0145
+
+== robustness ==
+  leave-out cell Pythia410m-civil  : slope=-0.0254 p=0.0379  (Fisher r=-0.291)
+  leave-out cell Qwen0.5B-bios     : slope=-0.0270 p=0.0791  (Fisher r=-0.141)
+  leave-out cell Qwen0.5B-civil    : slope=-0.0274 p=0.0325  (Fisher r=-0.237)
+  within-stratum permutation test (B=20000): p=0.0611  (assumption-free)
+  high-seed-only replication (seeds 3-14, n=108): slope=-0.0272 p=0.0180  Fisher r=-0.240
+  exploratory half (seeds 3-8) : slope=-0.0204 p=0.2567 Fisher r=-0.098
+  SEALED half   (seeds 9-14): slope=-0.0389 p=0.1408 Fisher r=-0.320
+
+== per-stratum detail (report this table; it makes the mechanism visible) ==
+              stratum  n   sd_cd    sd_w       b       r
+Pythia410m-civil_0.65 15 +0.2491 +0.0851 -0.0420 -0.1231
+Pythia410m-civil_0.85 15 +0.4517 +0.1054 -0.0543 -0.2329
+Pythia410m-civil_0.97 15 +0.9657 +0.0873 +0.0097 +0.1069
+   Qwen0.5B-bios_0.65 15 +0.2360 +0.0291 -0.0392 -0.3176
+   Qwen0.5B-bios_0.85 15 +0.9482 +0.0366 -0.0156 -0.4046
+   Qwen0.5B-bios_0.97 15 +1.7034 +0.0935 -0.0227 -0.4133
+  Qwen0.5B-civil_0.65 15 +0.2965 +0.0410 -0.0592 -0.4278
+  Qwen0.5B-civil_0.85 15 +0.5919 +0.0571 -0.0225 -0.2334
+  Qwen0.5B-civil_0.97 15 +1.2242 +0.0839 +0.0066 +0.0967

@@ -1,0 +1,71 @@
+bios cells loaded: N=108
+
+== C1 CAPABILITY ==
+  The obvious controls are mechanically circular: overall accuracy CONTAINS
+  worst-group (it is their mean), so conditioning worst on overall conditions
+  the outcome on a quantity containing it. Under that control cueDelta dies:
+    worst ~ cueD + cell FE: beta=-0.0893 p=2.638e-29
+      + overall accuracy   : beta=-0.0044 p=4.723e-01
+
+  The CLEAN test uses DISJOINT example sets -- predict accuracy where the cue
+  HURTS, controlling for accuracy where it HELPS. No shared examples:
+    adversarial ~ cueD + cell FE          : beta=-0.0748 p=1.231e-39
+    adversarial ~ cueD + aligned + cell FE : beta=-0.0763 p=7.991e-21
+    adversarial ~ cueD + aligned + strat FE: beta=-0.0569 p=3.728e-07
+    partial R2 of cueDelta over capability-only model = +0.2492
+    capability's own coefficient in that model: p=0.769
+
+== C2 PLACEBO ==
+  N=18   |cueDelta| mean=3.020   |placeboDelta| mean=0.075   ratio=40.3x
+  placebo edits 44% of texts vs 100% for the identity edit; edit-rate-adjusted ratio = 17.8x
+  DECISIVE: r(cueDelta, worst)=-0.905 (p=2.4e-07)  vs  r(placeboDelta, worst)=+0.080 (p=0.75)
+  r(cueDelta, placeboDelta) = -0.109  (~0 => different constructs)
+
+== C3 RELIABILITY ==
+  108 models x 300 texts. split-half r across models = 0.9928, Spearman-Brown = 0.9964
+  within-model SE=0.1232 vs between-model SD=2.3173
+  => disattenuation moves a -0.0266 slope to -0.0267: measurement error
+     is NOT what produced the small within-recipe effect.
+
+== C4 INSTRUMENT (rho is randomized) ==
+  first stage rho->cueDelta = +15.00 (strong by construction)
+  OLS=-0.0616   2SLS=-0.0765   ratio=1.24
+  CAVEAT: the exclusion restriction (rho affects worst-group ONLY through
+  cueDelta) is almost certainly violated. Report as a bound, not an estimate --
+  but do report it, since leaving a randomized instrument unused invites the ask.
+
+== C5 EARLY WARNING -- does epoch-1 cueDelta beat free baselines? ==
+  N=72. raw correlations with FINAL worst-group:
+    epoch-1 cueDelta                   r=-0.886 p=4.9e-25
+    epoch-1 overall accuracy (FREE)    r=+0.875 p=9.7e-24
+    epoch-1 worst-CLASS accuracy (FREE) r=+0.710 p=2.8e-12
+  incremental validity of cueDelta over each free baseline:
+    over overall accuracy       no controls          : dR2=+0.0413 p=0.0003
+    over overall accuracy       + cell FE + rho DUMMIES: dR2=+0.0004 p=0.6469
+    over worst-CLASS accuracy   no controls          : dR2=+0.2885 p=0.0000
+    over worst-CLASS accuracy   + cell FE + rho DUMMIES: dR2=+0.0004 p=0.6626
+  => the incremental claim exists ONLY without proper controls. Early warning is
+     DESCRIPTIVE ONLY: it does not beat a free baseline.
+
+== C6 OUT-OF-REGIME EXTRAPOLATION (leave-one-rho-out, cell FE) ==
+  from cd    : R2=+0.571  MAE=0.127
+  from rho   : R2=-0.182  MAE=0.219
+  from probe : R2=+0.037  MAE=0.186
+  from rho-step (nearest observed level, cell-wise -- the monotone
+  nonparametric alternative): R2=-0.140  MAE=0.220
+  per-fold R2 for cueDelta vs the held-out level's own mean (the honest caveat):
+    rho=0.65: R2=-0.848
+    rho=0.85: R2=+0.691
+    rho=0.97: R2=+0.191
+
+== C7 PROBE AT CEILING (per-stratum SD of probe AUROC, high-seed sample) ==
+  Pythia410m-civil rho=0.65: SD(probeAUROC)=0.0120  (n=15)
+  Pythia410m-civil rho=0.85: SD(probeAUROC)=0.0073  (n=15)
+  Pythia410m-civil rho=0.97: SD(probeAUROC)=0.0051  (n=15)
+  Qwen0.5B-bios  rho=0.65: SD(probeAUROC)=0.0156  (n=15)
+  Qwen0.5B-bios  rho=0.85: SD(probeAUROC)=0.0020  (n=15)
+  Qwen0.5B-bios  rho=0.97: SD(probeAUROC)=0.0007  (n=15)
+  Qwen0.5B-civil rho=0.65: SD(probeAUROC)=0.0112  (n=15)
+  Qwen0.5B-civil rho=0.85: SD(probeAUROC)=0.0059  (n=15)
+  Qwen0.5B-civil rho=0.97: SD(probeAUROC)=0.0036  (n=15)
+  range: 0.0007 -- 0.0156   vs SD(cueDelta) within-stratum 0.236 -- 1.703

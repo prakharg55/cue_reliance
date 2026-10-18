@@ -1,0 +1,22 @@
+within-rho slope: beta=-0.0254 accuracy points per within-cell SD of cueDelta
+  se=0.0174  df=125  two-sided p=0.1468
+  90% CI (the interval TOST reads) = [-0.0542, +0.0034]
+  -> we can reject |beta| >= 0.0542 accuracy points
+
+scale anchors:  total SD(worst)=0.2357   within-stratum SD=0.0737   rho=0.97 vs 0.65 effect=-0.3875
+
+margin sensitivity (Braun et al. report this rather than one margin):
+    margin   as % of rho effect    TOST p  verdict
+    0.0200                 5.2%    0.6216  cannot conclude equivalence
+    0.0300                 7.7%    0.3960  cannot conclude equivalence
+    0.0400                10.3%    0.2015  cannot conclude equivalence
+    0.0500                12.9%    0.0799  cannot conclude equivalence
+    0.0542                14.0%    0.0502  cannot conclude equivalence
+    0.0600                15.5%    0.0245  EQUIVALENT
+    0.0750                19.4%    0.0026  EQUIVALENT
+    0.1000                25.8%    0.0000  EQUIVALENT
+
+principled margin candidates:
+  1/10 within-stratum SD (Kruschke rule)      = 0.0074
+  10% of the recipe effect (interpretable)    = 0.0387
+  the smallest repair effect we care about    = 0.0300  (LEACE mean gain ~0.09)

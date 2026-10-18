@@ -1,0 +1,20 @@
+2026-07-27 19:09:00.015468: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-07-27 19:09:00.031862: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1785193740.049927 2848587 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1785193740.055776 2848587 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1785193740.071250 2848587 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785193740.071282 2848587 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785193740.071286 2848587 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1785193740.071289 2848587 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-07-27 19:09:00.075513: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+`torch_dtype` is deprecated! Use `dtype` instead!
+V3E rho=0.65 seed=11 model=pythia device=cuda
+EPOCH rho=0.65 seed=11 epoch=0 cueDeltaTrain=0.084 cueDeltaEval=-0.014 worstSmall=0.073 overall=0.512 worstClass=0.090 trainLoss=nan
+EPOCH rho=0.65 seed=11 epoch=1 cueDeltaTrain=0.758 cueDeltaEval=0.435 worstSmall=0.580 overall=0.762 worstClass=0.617 trainLoss=1.2345
+EPOCH rho=0.65 seed=11 epoch=2 cueDeltaTrain=0.961 cueDeltaEval=0.508 worstSmall=0.740 overall=0.808 worstClass=0.743 trainLoss=0.5887
+EPOCH rho=0.65 seed=11 epoch=3 cueDeltaTrain=1.669 cueDeltaEval=0.992 worstSmall=0.820 overall=0.850 worstClass=0.833 trainLoss=0.2478
+EPOCH rho=0.65 seed=11 epoch=4 cueDeltaTrain=1.403 cueDeltaEval=0.864 worstSmall=0.680 overall=0.820 worstClass=0.740 trainLoss=0.1056
+RESULT rho=0.65 seed=11 worstgroup=0.715 advgroup=0.810 cueDelta=0.978
+V3E DONE
