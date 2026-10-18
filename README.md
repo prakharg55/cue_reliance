@@ -92,13 +92,3 @@ logs/        one log per trained model
 results/     saved output of every analysis script
 figures/     the figures in the paper
 ```
-
-## Citation
-
-```bibtex
-@misc{gupta2026askthemodel,
-  title  = {Ask the Model: Counterfactual Cue Reliance Predicts Worst-Group Failure and Targets Repair},
-  author = {Gupta, Prakhar and Zhang, Terry Jingchen and Draye, Florent and Sch{\"o}lkopf, Bernhard and Jin, Zhijing},
-  year   = {2026}
-}
-```
